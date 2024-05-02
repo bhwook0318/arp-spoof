@@ -97,8 +97,8 @@ int main(int argc, char* argv[]) {
 	std::vector<std::pair<Mac, Mac>> mac_pair;
 
 	for (int i = 2; i < argc; i += 2) {
-		ip_pair.push_back(make_pair(Ip(argv[i]), Ip(argv[i + 1])));
-		mac_pair.push_back(make_pair(get_Mac(handle, my_Mac, my_Ip, (Ip)argv[i]), get_Mac(handle, my_Mac, my_Ip, (Ip)argv[i+1])));
+		ip_pair.push_back(std::make_pair(Ip(argv[i]), Ip(argv[i + 1])));
+		mac_pair.push_back(std::make_pair(get_Mac(handle, my_Mac, my_Ip, (Ip)argv[i]), get_Mac(handle, my_Mac, my_Ip, (Ip)argv[i+1])));
 	}
 	for (int i = 0; i < ip_pair.size(); i++ ) {
 		printf("[session %d] serder Ip : %s Mac : %s\n", i, ip_pair[i].first.operator std::string().c_str(), mac_pair[i].first.operator std::string().c_str());
